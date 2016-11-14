@@ -21,25 +21,38 @@ class App extends React.Component {
   }
 
   _onLoginAuth0 = (auth0IdToken) => {
-    console.log('hi')
     const variables = { idToken: auth0IdToken }
-    window.localStorage.setItem('auth0IdToken', auth0IdToken)
-    this.setState({ auth0IdToken })
 
     this.props.createUser({ variables })
       .then(({ data }) => {
-        console.log('got create', data)
+        this._signinUser(auth0IdToken)
+      }).catch((e) => {
+        if (e.graphQLErrors[0].code === 3023) {
+          // 3023 means user was already created, so let's signin user instead
+          this._signinUser(auth0IdToken)
+        } else {
+          // another error happened :(
+          throw e
+        }
+    })
+  }
 
-        this.props.signinUser({ variables })
-          .then(({ data }) => {
-            console.log('got signin', data)
-            window.localStorage.setItem('graphcoolToken', data.token)
-            this.setState({ graphcoolToken: data.token })
-          })
+  _signinUser = (auth0IdToken) => {
+    const variables = { idToken: auth0IdToken }
+    this.props.signinUser({ variables })
+      .then(({ data }) => {
+        // set graphcoolToken. note that we need to prepend `Bearer `
+        window.localStorage.setItem('graphcoolToken', `Bearer ${data.signinUser.token}`)
+        this.setState({ graphcoolToken: `Bearer ${data.signinUser.token}` })
+
+        // set auth0IdToken so Auth0 Lock works correctly
+        window.localStorage.setItem('auth0IdToken', auth0IdToken)
+        this.setState({ auth0IdToken })
       })
   }
 
   _logout = () => {
+    // remove tokens from state and local storage and reload page to reset apollo client
     this.setState({
       auth0IdToken: null,
       graphcoolToken: null,
@@ -47,7 +60,6 @@ class App extends React.Component {
     window.localStorage.removeItem('auth0IdToken')
     window.localStorage.removeItem('graphcoolToken')
 
-    // reload page so apollo client store is reset
     location.reload()
   }
 
@@ -62,7 +74,6 @@ class App extends React.Component {
   renderLoggedIn() {
     return (
       <div>
-        <span>Currently logged in: {this.state.auth0IdToken.slice(0,10)}</span>
         <div className='pv3'>
           <span
             className='dib bg-red white pa3 pointer dim'
@@ -103,7 +114,7 @@ mutation($idToken: String!) {
 `
 
 const signinUserMutation = gql`
-mutation($idToken: String) {
+mutation($idToken: String!) {
   signinUser(auth0: {idToken: $idToken}) {
     token
   }
