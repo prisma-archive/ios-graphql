@@ -91,7 +91,6 @@ class App extends React.Component {
   renderLoggedOut() {
     return (
       <div>
-        <span>Sign in to create a new post</span>
         <div className='pv3'>
           <LoginAuth0
             clientId={clientId}
@@ -99,6 +98,7 @@ class App extends React.Component {
             onLogin={this._onLoginAuth0}
           />
         </div>
+        <span>Log in to create new posts</span>
         <ListPage />
       </div>
     )
