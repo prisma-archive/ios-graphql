@@ -57,8 +57,7 @@ class CreatePage extends React.Component {
 
   handlePost = () => {
     const {description, imageUrl} = this.state
-    const authorId = this.props.data.user.id
-    this.props.mutate({variables: {description, imageUrl, authorId}})
+    this.props.mutate({variables: {description, imageUrl}})
       .then(() => {
         this.props.router.replace('/')
       })
@@ -67,7 +66,7 @@ class CreatePage extends React.Component {
 
 const addMutation = gql`
   mutation ($description: String!, $imageUrl: String!, $authorId: ID!){
-    createPost(description: $description, imageUrl: $imageUrl, authorId: $authorId) {
+    createPost(description: $description, imageUrl: $imageUrl) {
       id
     }
   }
