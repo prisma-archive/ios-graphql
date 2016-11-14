@@ -19,9 +19,6 @@ export default class Post extends React.Component {
         />
         <div className='pt3'>
           {this.props.post.description}&nbsp;
-          <span className='green f6'>
-            Author: {this.props.post.author.auth0UserId ? this.props.post.author.auth0UserId.slice(0, 10) : 'Unknown'}
-          </span>
         </div>
       </div>
     )
