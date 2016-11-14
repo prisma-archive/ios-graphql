@@ -17,7 +17,7 @@ class ListPage extends React.Component {
       <div className='w-100 flex justify-center'>
         <div className='w-100' style={{ maxWidth: 400 }}>
           {this.props.data.allPosts.reverse().map((post) =>
-            <Post key={post.id} post={post} refresh={() => this.props.data.refetch()} />
+            <Post key={post.id} post={post} />
           )}
         </div>
       </div>
@@ -30,9 +30,6 @@ const FeedQuery = gql`query {
     id
     imageUrl
     description
-    author {
-      auth0UserId
-    }
   }
 }`
 
