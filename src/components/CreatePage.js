@@ -65,7 +65,7 @@ class CreatePage extends React.Component {
 }
 
 const addMutation = gql`
-  mutation ($description: String!, $imageUrl: String!, $authorId: ID!){
+  mutation ($description: String!, $imageUrl: String!){
     createPost(description: $description, imageUrl: $imageUrl) {
       id
     }

@@ -9,7 +9,7 @@ import 'tachyons'
 
 const networkInterface = createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/__PROJECT_ID__' })
 
-// use the graphcoolToken in localStorage for authorized requests
+// use the auth0IdToken in localStorage for authorized requests
 networkInterface.use([{
   applyMiddleware (req, next) {
     if (!req.options.headers) {
@@ -17,7 +17,9 @@ networkInterface.use([{
     }
 
     // get the authentication token from local storage if it exists
-    req.options.headers.authorization = localStorage.getItem('graphcoolToken') || null;
+    if (localStorage.getItem('auth0IdToken')) {
+      req.options.headers.authorization = `Bearer ${localStorage.getItem('auth0IdToken')}`;
+    }
     next()
   },
 }])

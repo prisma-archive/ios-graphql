@@ -17,7 +17,6 @@ class App extends React.Component {
 
   state = {
     auth0IdToken: window.localStorage.getItem('auth0IdToken'),
-    graphcoolToken: window.localStorage.getItem('graphcoolToken'),
   }
 
   _onLoginAuth0 = (auth0IdToken) => {
@@ -41,10 +40,6 @@ class App extends React.Component {
     const variables = { idToken: auth0IdToken }
     this.props.signinUser({ variables })
       .then(({ data }) => {
-        // set graphcoolToken. note that we need to prepend `Bearer `
-        window.localStorage.setItem('graphcoolToken', `Bearer ${data.signinUser.token}`)
-        this.setState({ graphcoolToken: `Bearer ${data.signinUser.token}` })
-
         // set auth0IdToken so Auth0 Lock works correctly
         window.localStorage.setItem('auth0IdToken', auth0IdToken)
         this.setState({ auth0IdToken })
@@ -55,10 +50,8 @@ class App extends React.Component {
     // remove tokens from state and local storage and reload page to reset apollo client
     this.setState({
       auth0IdToken: null,
-      graphcoolToken: null,
     })
     window.localStorage.removeItem('auth0IdToken')
-    window.localStorage.removeItem('graphcoolToken')
 
     location.reload()
   }
