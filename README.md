@@ -4,7 +4,9 @@
 
 ## Getting Started
 
-After [downloading this example](https://github.com/graphcool-examples/react-apollo-auth0-example/archive/master.zip) please follow these steps.
+After [downloading this example](https://github.com/graphcool-examples/react-apollo-auth0-example/archive/master.zip) please follow the steps detailed in [the online guide](https://graph.cool/docs/guides/react-apollo-auth0-lock).
+
+A short summary is given below.
 
 ### 1. Create an account
 
