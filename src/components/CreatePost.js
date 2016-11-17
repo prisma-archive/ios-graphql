@@ -1,9 +1,9 @@
 import React from 'react'
-import { withRouter, Link } from 'react-router'
+import { withRouter } from 'react-router'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
-class CreatePage extends React.Component {
+class CreatePost extends React.Component {
 
   static propTypes = {
     router: React.PropTypes.object,
@@ -17,16 +17,13 @@ class CreatePage extends React.Component {
   }
 
   render () {
+    if (this.props.data.loading) {
+      return (<div>Loading</div>)
+    }
+
     // redirect if no user is logged in
     if (!this.props.data.user) {
-      return (
-        <Link
-          to='/'
-          className='link dim black'
-        >
-          Please login to create a new post.
-        </Link>
-      )
+      this.props.router.replace('/')
     }
 
     return (
@@ -64,7 +61,7 @@ class CreatePage extends React.Component {
   }
 }
 
-const addMutation = gql`
+const createPost = gql`
   mutation ($description: String!, $imageUrl: String!){
     createPost(description: $description, imageUrl: $imageUrl) {
       id
@@ -80,6 +77,6 @@ const userQuery = gql`
   }
 `
 
-export default graphql(addMutation)(
-  graphql(userQuery)(withRouter(CreatePage))
+export default graphql(createPost)(
+  graphql(userQuery, { options: { forceFetch: true }} )(withRouter(CreatePost))
 )

@@ -1,6 +1,7 @@
 import React from 'react'
 import LoginAuth0 from './LoginAuth0'
 import { graphql } from 'react-apollo'
+import { withRouter } from 'react-router'
 import gql from 'graphql-tag'
 import ListPage from './ListPage'
 import NewPostLink from './NewPostLink'
@@ -10,56 +11,31 @@ const domain='__AUTH0_DOMAIN__'
 
 class App extends React.Component {
   static propTypes = {
-    data: React.PropTypes.object,
-    createUser: React.PropTypes.func,
-    signinUser: React.PropTypes.func,
-  }
-
-  state = {
-    auth0IdToken: window.localStorage.getItem('auth0IdToken'),
+    router: React.PropTypes.object.isRequired,
+    createUser: React.PropTypes.func.isRequired,
   }
 
   _onLoginAuth0 = (auth0IdToken) => {
-    const variables = { idToken: auth0IdToken }
-
-    this.props.createUser({ variables })
-      .then(({ data }) => {
-        this._signinUser(auth0IdToken)
-      }).catch((e) => {
-        if (e.graphQLErrors[0].code === 3023) {
-          // 3023 means user was already created, so let's signin user instead
-          this._signinUser(auth0IdToken)
-        } else {
-          // another error happened :(
-          throw e
-        }
-    })
-  }
-
-  _signinUser = (auth0IdToken) => {
-    const variables = { idToken: auth0IdToken }
-    this.props.signinUser({ variables })
-      .then(({ data }) => {
-        // set auth0IdToken so Auth0 Lock works correctly
-        window.localStorage.setItem('auth0IdToken', auth0IdToken)
-        this.setState({ auth0IdToken })
-      })
+    window.localStorage.setItem('auth0IdToken', auth0IdToken)
+    this.props.router.replace(`/login`)
   }
 
   _logout = () => {
-    // remove tokens from state and local storage and reload page to reset apollo client
-    this.setState({
-      auth0IdToken: null,
-    })
+    // remove token from local storage and reload page to reset apollo client
     window.localStorage.removeItem('auth0IdToken')
-
     location.reload()
   }
 
+  _isLoggedIn = () => {
+    return window.localStorage.getItem('auth0IdToken') !== null
+  }
+
   render () {
-    if (this.state.auth0IdToken) {
+    if (this._isLoggedIn()) {
+      console.log('render logged in')
       return this.renderLoggedIn()
     } else {
+      console.log('render logged out')
       return this.renderLoggedOut()
     }
   }
@@ -99,21 +75,12 @@ class App extends React.Component {
 }
 
 const createUserMutation = gql`
-mutation($idToken: String!) {
-  createUser(authProvider: {auth0: {idToken: $idToken}}) {
+mutation($idToken: String!, $emailSubscription: Boolean!) {
+  createUser(authProvider: {auth0: {idToken: $idToken}}, emailSubscription: $emailSubscription) {
     auth0UserId
   }
 }
 `
 
-const signinUserMutation = gql`
-mutation($idToken: String!) {
-  signinUser(auth0: {idToken: $idToken}) {
-    token
-  }
-}
-`
-
-export default graphql(createUserMutation, {name : 'createUser'})(
-  graphql(signinUserMutation, {name: 'signinUser'})(App)
+export default graphql(createUserMutation, {name : 'createUser'})(withRouter(App)
 )

@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Auth0Lock from 'auth0-lock'
+import { withRouter } from 'react-router'
 
-export default class LoginAuth0 extends Component {
+class LoginAuth0 extends Component {
 
   constructor (props) {
     super(props)
@@ -12,12 +13,13 @@ export default class LoginAuth0 extends Component {
   static propTypes = {
     clientId: PropTypes.string.isRequired,
     domain: PropTypes.string.isRequired,
-    onLogin: PropTypes.func.isRequired,
+    router: PropTypes.object.isRequired,
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this._lock.on('authenticated', (authResult) => {
-      this.props.onLogin(authResult.idToken)
+      window.localStorage.setItem('auth0IdToken', authResult.idToken)
+      this.props.router.replace(`/login`)
     })
   }
 
@@ -27,12 +29,16 @@ export default class LoginAuth0 extends Component {
 
   render() {
     return (
-      <span
-        onClick={this._showLogin}
-        className='dib pa3 white bg-blue dim pointer'
-      >
-        Log in with Auth0
-      </span>
+      <div>
+        <span
+          onClick={this._showLogin}
+          className='dib pa3 white bg-blue dim pointer'
+        >
+          Log in with Auth0
+        </span>
+      </div>
     )
   }
 }
+
+export default withRouter(LoginAuth0)

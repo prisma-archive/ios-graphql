@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
-import CreatePage from './components/CreatePage'
+import CreatePost from './components/CreatePost'
+import CreateUser from './components/CreateUser'
 import { Router, Route, browserHistory } from 'react-router'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
@@ -18,7 +19,7 @@ networkInterface.use([{
 
     // get the authentication token from local storage if it exists
     if (localStorage.getItem('auth0IdToken')) {
-      req.options.headers.authorization = `Bearer ${localStorage.getItem('auth0IdToken')}`;
+      req.options.headers.authorization = `Bearer ${localStorage.getItem('auth0IdToken')}`
     }
     next()
   },
@@ -30,7 +31,8 @@ ReactDOM.render((
   <ApolloProvider client={client}>
     <Router history={browserHistory}>
       <Route path='/' component={App} />
-      <Route path='create' component={CreatePage} />
+      <Route path='create' component={CreatePost} />
+      <Route path='login' component={CreateUser} />
     </Router>
   </ApolloProvider>
   ),
