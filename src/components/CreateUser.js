@@ -36,12 +36,17 @@ class CreateUser extends React.Component {
             placeholder='Name'
             onChange={(e) => this.setState({name: e.target.value})}
           />
-          <input
-            className='w-100 pa3 mv2'
-            value={this.state.emailSubscription}
-            type='checkbox'
-            onChange={(e) => this.setState({emailSubscription: e.target.checked})}
-          />
+          <div>
+            <input
+              className='w-100 pa3 mv2'
+              value={this.state.emailSubscription}
+              type='checkbox'
+              onChange={(e) => this.setState({emailSubscription: e.target.checked})}
+            />
+            <span>
+              Subscribe to email notifications?
+            </span>
+          </div>
 
           {this.state.name &&
           <button className='pa3 bg-black-10 bn dim ttu pointer' onClick={this.createUser}>Sign up</button>

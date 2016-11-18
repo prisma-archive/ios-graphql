@@ -33,6 +33,4 @@ const FeedQuery = gql`query {
   }
 }`
 
-const ListPageWithData = graphql(FeedQuery)(ListPage)
-
-export default ListPageWithData
+export default graphql(FeedQuery)(ListPage)
