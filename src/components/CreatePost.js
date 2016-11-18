@@ -23,6 +23,7 @@ class CreatePost extends React.Component {
 
     // redirect if no user is logged in
     if (!this.props.data.user) {
+      console.warn('only logged in users can create new posts')
       this.props.router.replace('/')
     }
 
