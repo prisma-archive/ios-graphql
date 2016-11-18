@@ -58,10 +58,8 @@ class CreateUser extends React.Component {
       emailSubscription: this.state.emailSubscription,
     }
 
-    window.localStorage.removeItem('auth0IdToken')
     this.props.createUser({ variables })
       .then((response) => {
-          window.localStorage.setItem('auth0IdToken', variables.idToken)
           this.props.router.replace('/')
       }).catch((e) => {
         console.error(e)
