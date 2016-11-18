@@ -12,12 +12,7 @@ const domain='__AUTH0_DOMAIN__'
 class App extends React.Component {
   static propTypes = {
     router: React.PropTypes.object.isRequired,
-    createUser: React.PropTypes.func.isRequired,
-  }
-
-  _onLoginAuth0 = (auth0IdToken) => {
-    window.localStorage.setItem('auth0IdToken', auth0IdToken)
-    this.props.router.replace(`/login`)
+    data: React.PropTypes.object.isRequired,
   }
 
   _logout = () => {
@@ -27,15 +22,17 @@ class App extends React.Component {
   }
 
   _isLoggedIn = () => {
-    return window.localStorage.getItem('auth0IdToken') !== null
+    return window.localStorage.getItem('auth0IdToken') !== null && this.props.data.user
   }
 
   render () {
+    if (this.props.data.loading) {
+      return (<div>Loading</div>)
+    }
+
     if (this._isLoggedIn()) {
-      console.log('render logged in')
       return this.renderLoggedIn()
     } else {
-      console.log('render logged out')
       return this.renderLoggedOut()
     }
   }
@@ -64,7 +61,6 @@ class App extends React.Component {
           <LoginAuth0
             clientId={clientId}
             domain={domain}
-            onLogin={this._onLoginAuth0}
           />
         </div>
         <span>Log in to create new posts</span>
@@ -74,13 +70,12 @@ class App extends React.Component {
   }
 }
 
-const createUserMutation = gql`
-mutation($idToken: String!, $emailSubscription: Boolean!) {
-  createUser(authProvider: {auth0: {idToken: $idToken}}, emailSubscription: $emailSubscription) {
-    auth0UserId
+const userQuery = gql`
+  query {
+    user {
+      id
+    }
   }
-}
 `
 
-export default graphql(createUserMutation, {name : 'createUser'})(withRouter(App)
-)
+export default graphql(userQuery, { options: {forceFetch: true }})(withRouter(App))
