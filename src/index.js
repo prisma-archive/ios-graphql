@@ -32,7 +32,7 @@ ReactDOM.render((
     <Router history={browserHistory}>
       <Route path='/' component={App} />
       <Route path='create' component={CreatePost} />
-      <Route path='login' component={CreateUser} />
+      <Route path='signup' component={CreateUser} />
     </Router>
   </ApolloProvider>
   ),
