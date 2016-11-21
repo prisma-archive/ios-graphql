@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   _isLoggedIn = () => {
-    return window.localStorage.getItem('auth0IdToken') !== null && this.props.data.user
+    return this.props.data.user
   }
 
   render () {
