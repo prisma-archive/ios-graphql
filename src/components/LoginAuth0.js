@@ -19,7 +19,7 @@ class LoginAuth0 extends Component {
   componentDidMount() {
     this._lock.on('authenticated', (authResult) => {
       window.localStorage.setItem('auth0IdToken', authResult.idToken)
-      this.props.router.replace(`/login`)
+      this.props.router.replace(`/signup`)
     })
   }
 
