@@ -5,7 +5,7 @@ Try the [hosted version](http://apollo-email.netlify.com).
 
 ## Getting Started
 
-After [downloading this example](https://github.com/graphcool-examples/react-apollo-auth0-example/archive/master.zip) please follow the steps detailed in [the online guide](https://graph.cool/docs/guides/react-apollo-auth0-lock).
+After [downloading this example](https://github.com/graphcool-examples/react-apollo-auth0-example/archive/master.zip) please follow the steps detailed in [the online guide](https://www.graph.cool/docs/reference/simple-api/user-authentication-eixu9osueb#auth0-social-logins).
 
 A short summary is given below.
 
