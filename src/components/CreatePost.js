@@ -86,7 +86,6 @@ export default graphql(createPost, {
           variables: {...variables},
           updateQueries: {
             FeedQuery: (prev, {mutationResult}) => {
-              debugger
               const newPost = mutationResult.data.createPost
               return {
                 allPosts: [...mutationResult.allPosts, newPost]
