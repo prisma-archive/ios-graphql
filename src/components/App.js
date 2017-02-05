@@ -71,7 +71,7 @@ class App extends React.Component {
 }
 
 const userQuery = gql`
-  query {
+  query userQuery {
     user {
       id
     }

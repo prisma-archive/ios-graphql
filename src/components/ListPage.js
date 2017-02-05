@@ -25,7 +25,7 @@ class ListPage extends React.Component {
   }
 }
 
-const FeedQuery = gql`query {
+const FeedQuery = gql`query FeedQuery {
   allPosts(orderBy: createdAt_DESC) {
     id
     imageUrl

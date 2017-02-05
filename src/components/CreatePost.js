@@ -7,7 +7,7 @@ class CreatePost extends React.Component {
 
   static propTypes = {
     router: React.PropTypes.object,
-    mutate: React.PropTypes.func,
+    createPost: React.PropTypes.func,
     data: React.PropTypes.object,
   }
 
@@ -55,7 +55,7 @@ class CreatePost extends React.Component {
 
   handlePost = () => {
     const {description, imageUrl} = this.state
-    this.props.mutate({variables: {description, imageUrl}})
+    this.props.createPost({variables: {description, imageUrl}})
       .then(() => {
         this.props.router.replace('/')
       })
@@ -63,7 +63,7 @@ class CreatePost extends React.Component {
 }
 
 const createPost = gql`
-  mutation ($description: String!, $imageUrl: String!){
+  mutation createPost($description: String!, $imageUrl: String!) {
     createPost(description: $description, imageUrl: $imageUrl) {
       id
     }
@@ -71,13 +71,32 @@ const createPost = gql`
 `
 
 const userQuery = gql`
-  query {
+  query userQuery {
     user {
       id
     }
   }
 `
 
-export default graphql(createPost)(
+export default graphql(createPost, {
+  props({ownProps, mutate}) {
+    return {
+      createPost({variables}) {
+        return mutate({
+          variables: {...variables},
+          updateQueries: {
+            FeedQuery: (prev, {mutationResult}) => {
+              debugger
+              const newPost = mutationResult.data.createPost
+              return {
+                allPosts: [...mutationResult.allPosts, newPost]
+              }
+            },
+          },
+        })
+      },
+    }
+  }
+})(
   graphql(userQuery, { options: { forceFetch: true }} )(withRouter(CreatePost))
 )
