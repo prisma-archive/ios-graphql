@@ -8,7 +8,7 @@
   "dependencies": {
     "apollo-client": "^0.8.2",
     "auth0-lock": "^10.6.1",
-    "graphql-tag": "^1.2.4",
+    "graphql-tag": "^2.0.0",
     "react": "^15.3.1",
     "react-apollo": "^0.10.0",
     "react-dom": "^15.3.1",
