@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, browserHistory } from 'react-router-dom
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
 import 'tachyons'
-// https://api.graph.cool/simple/v1/__PROJECT_ID__
+
 const networkInterface = createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/__PROJECT_ID__' })
 
 // use the auth0IdToken in localStorage for authorized requests
