@@ -1,7 +1,7 @@
 import React from 'react'
 import LoginAuth0 from './LoginAuth0'
 import { graphql } from 'react-apollo'
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router-dom'
 import gql from 'graphql-tag'
 import ListPage from './ListPage'
 import NewPostLink from './NewPostLink'
@@ -11,7 +11,7 @@ const domain='__AUTH0_DOMAIN__'
 
 class App extends React.Component {
   static propTypes = {
-    router: React.PropTypes.object.isRequired,
+    history: React.PropTypes.object.isRequired,
     data: React.PropTypes.object.isRequired,
   }
 
