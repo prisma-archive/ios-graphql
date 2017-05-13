@@ -13,6 +13,7 @@ class ListPage extends React.Component {
     if (this.props.data.loading) {
       return (<div>Loading</div>)
     }
+
     return (
       <div className='w-100 flex justify-center'>
         <div className='w-100' style={{ maxWidth: 400 }}>
@@ -33,4 +34,4 @@ const FeedQuery = gql`query FeedQuery {
   }
 }`
 
-export default graphql(FeedQuery)(ListPage)
+export default graphql(FeedQuery, { options: {forceFetch: true }})(ListPage)
