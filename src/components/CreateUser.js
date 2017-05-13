@@ -1,12 +1,11 @@
 import React from 'react'
-import { withRouter } from 'react-router'
+import { withRouter, Redirect } from 'react-router-dom'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 class CreateUser extends React.Component {
 
   static propTypes = {
-    router: React.PropTypes.object.isRequired,
     createUser: React.PropTypes.func.isRequired,
     data: React.PropTypes.object.isRequired,
   }
@@ -25,7 +24,11 @@ class CreateUser extends React.Component {
     // redirect if user is logged in or did not finish Auth0 Lock dialog
     if (this.props.data.user || window.localStorage.getItem('auth0IdToken') === null) {
       console.warn('not a new user or already logged in')
-      this.props.router.replace('/')
+      return (
+        <Redirect to={{
+          pathname: '/'
+        }}/>
+      )
     }
 
     return (
@@ -73,10 +76,10 @@ class CreateUser extends React.Component {
 
     this.props.createUser({ variables })
       .then((response) => {
-          this.props.router.replace('/')
+          this.props.history.replace('/')
       }).catch((e) => {
         console.error(e)
-        this.props.router.replace('/')
+        this.props.history.replace('/')
       })
   }
 }

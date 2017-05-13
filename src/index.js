@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import App from './components/App'
 import CreatePost from './components/CreatePost'
 import CreateUser from './components/CreateUser'
-import { BrowserRouter as Router, Route, browserHistory } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
 import 'tachyons'
@@ -29,11 +29,11 @@ const client = new ApolloClient({ networkInterface })
 
 ReactDOM.render((
   <ApolloProvider client={client}>
-    <Router history={browserHistory}>
+    <Router>
       <div>
-        <Route path='/' component={App} />
-        <Route path='create' component={CreatePost} />
-        <Route path='signup' component={CreateUser} />
+        <Route exact path='/' component={App} />
+        <Route path='/create' component={CreatePost} />
+        <Route path='/signup' component={CreateUser} />
       </div>
     </Router>
   </ApolloProvider>

@@ -1,12 +1,11 @@
 import React from 'react'
-import { withRouter } from 'react-router'
+import { withRouter, Redirect } from 'react-router-dom'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 class CreatePost extends React.Component {
 
   static propTypes = {
-    router: React.PropTypes.object,
     createPost: React.PropTypes.func,
     data: React.PropTypes.object,
   }
@@ -24,7 +23,11 @@ class CreatePost extends React.Component {
     // redirect if no user is logged in
     if (!this.props.data.user) {
       console.warn('only logged in users can create new posts')
-      this.props.router.replace('/')
+      return (
+        <Redirect to={{
+          pathname: '/'
+        }}/>
+      )
     }
 
     return (
@@ -57,7 +60,7 @@ class CreatePost extends React.Component {
     const {description, imageUrl} = this.state
     this.props.createPost({variables: {description, imageUrl}})
       .then(() => {
-        this.props.router.replace('/')
+        this.props.history.push('/')
       })
   }
 }
