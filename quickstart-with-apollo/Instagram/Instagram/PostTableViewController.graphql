@@ -1,0 +1,11 @@
+query AllPosts {
+  allPosts {
+     ...PostDetails
+  }
+}
+
+fragment PostDetails on Post {
+  id
+  imageUrl
+  description
+}

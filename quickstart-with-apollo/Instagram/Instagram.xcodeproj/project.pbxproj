@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5571B2D61ECF2E76006E0028 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571B2D51ECF2E76006E0028 /* AppDelegate.swift */; };
+		5571B2DB1ECF2E76006E0028 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5571B2D91ECF2E76006E0028 /* Main.storyboard */; };
+		5571B2DD1ECF2E76006E0028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5571B2DC1ECF2E76006E0028 /* Assets.xcassets */; };
+		5571B2E01ECF2E76006E0028 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5571B2DE1ECF2E76006E0028 /* LaunchScreen.storyboard */; };
+		5571B2E91ECF2F9E006E0028 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5571B2E81ECF2F9E006E0028 /* Apollo.framework */; };
+		5571B2ED1ECF30F9006E0028 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571B2EC1ECF30F8006E0028 /* API.swift */; };
+		5571B2F01ECF333A006E0028 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571B2EF1ECF333A006E0028 /* PostCell.swift */; };
+		5571B2F21ECF335C006E0028 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571B2F11ECF335C006E0028 /* PostTableViewController.swift */; };
+		5571B2F41ECF394F006E0028 /* PostTableViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5571B2F31ECF394F006E0028 /* PostTableViewController.graphql */; };
+		5571B2F61ECF464F006E0028 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571B2F51ECF464F006E0028 /* AddPostViewController.swift */; };
+		5571B2F81ECF46C5006E0028 /* AddPostViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5571B2F71ECF46C5006E0028 /* AddPostViewController.graphql */; };
+		5571B2FA1ECF5177006E0028 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5571B2F91ECF5177006E0028 /* SDWebImage.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5571B2D21ECF2E76006E0028 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5571B2D51ECF2E76006E0028 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5571B2DA1ECF2E76006E0028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5571B2DC1ECF2E76006E0028 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5571B2DF1ECF2E76006E0028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5571B2E11ECF2E76006E0028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5571B2E81ECF2F9E006E0028 /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
+		5571B2EC1ECF30F8006E0028 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5571B2EF1ECF333A006E0028 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		5571B2F11ECF335C006E0028 /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
+		5571B2F31ECF394F006E0028 /* PostTableViewController.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PostTableViewController.graphql; sourceTree = "<group>"; };
+		5571B2F51ECF464F006E0028 /* AddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		5571B2F71ECF46C5006E0028 /* AddPostViewController.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AddPostViewController.graphql; sourceTree = "<group>"; };
+		5571B2F91ECF5177006E0028 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5571B2CF1ECF2E76006E0028 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5571B2E91ECF2F9E006E0028 /* Apollo.framework in Frameworks */,
+				5571B2FA1ECF5177006E0028 /* SDWebImage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5571B2C91ECF2E76006E0028 = {
+			isa = PBXGroup;
+			children = (
+				5571B2D41ECF2E76006E0028 /* Instagram */,
+				5571B2D31ECF2E76006E0028 /* Products */,
+				5571B2E71ECF2F9E006E0028 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5571B2D31ECF2E76006E0028 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5571B2D21ECF2E76006E0028 /* Instagram.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5571B2D41ECF2E76006E0028 /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				5571B2EE1ECF3100006E0028 /* GraphQL */,
+				5571B2D51ECF2E76006E0028 /* AppDelegate.swift */,
+				5571B2D91ECF2E76006E0028 /* Main.storyboard */,
+				5571B2DC1ECF2E76006E0028 /* Assets.xcassets */,
+				5571B2DE1ECF2E76006E0028 /* LaunchScreen.storyboard */,
+				5571B2E11ECF2E76006E0028 /* Info.plist */,
+				5571B2EF1ECF333A006E0028 /* PostCell.swift */,
+				5571B2F11ECF335C006E0028 /* PostTableViewController.swift */,
+				5571B2F51ECF464F006E0028 /* AddPostViewController.swift */,
+			);
+			path = Instagram;
+			sourceTree = "<group>";
+		};
+		5571B2E71ECF2F9E006E0028 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5571B2F91ECF5177006E0028 /* SDWebImage.framework */,
+				5571B2E81ECF2F9E006E0028 /* Apollo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5571B2EE1ECF3100006E0028 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				5571B2EC1ECF30F8006E0028 /* API.swift */,
+				5571B2F31ECF394F006E0028 /* PostTableViewController.graphql */,
+				5571B2F71ECF46C5006E0028 /* AddPostViewController.graphql */,
+			);
+			name = GraphQL;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5571B2D11ECF2E76006E0028 /* Instagram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5571B2E41ECF2E76006E0028 /* Build configuration list for PBXNativeTarget "Instagram" */;
+			buildPhases = (
+				5571B2EB1ECF2FFA006E0028 /* Generate Apollo GraphQL API */,
+				5571B2CE1ECF2E76006E0028 /* Sources */,
+				5571B2CF1ECF2E76006E0028 /* Frameworks */,
+				5571B2D01ECF2E76006E0028 /* Resources */,
+				5571B2EA1ECF2FB0006E0028 /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Instagram;
+			productName = Instagram;
+			productReference = 5571B2D21ECF2E76006E0028 /* Instagram.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5571B2CA1ECF2E76006E0028 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Nikolas Burk";
+				TargetAttributes = {
+					5571B2D11ECF2E76006E0028 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5571B2CD1ECF2E76006E0028 /* Build configuration list for PBXProject "Instagram" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5571B2C91ECF2E76006E0028;
+			productRefGroup = 5571B2D31ECF2E76006E0028 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5571B2D11ECF2E76006E0028 /* Instagram */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5571B2D01ECF2E76006E0028 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5571B2F81ECF46C5006E0028 /* AddPostViewController.graphql in Resources */,
+				5571B2E01ECF2E76006E0028 /* LaunchScreen.storyboard in Resources */,
+				5571B2F41ECF394F006E0028 /* PostTableViewController.graphql in Resources */,
+				5571B2DD1ECF2E76006E0028 /* Assets.xcassets in Resources */,
+				5571B2DB1ECF2E76006E0028 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5571B2EA1ECF2FB0006E0028 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Apollo.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		5571B2EB1ECF2FFA006E0028 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5571B2CE1ECF2E76006E0028 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5571B2ED1ECF30F9006E0028 /* API.swift in Sources */,
+				5571B2F61ECF464F006E0028 /* AddPostViewController.swift in Sources */,
+				5571B2F21ECF335C006E0028 /* PostTableViewController.swift in Sources */,
+				5571B2D61ECF2E76006E0028 /* AppDelegate.swift in Sources */,
+				5571B2F01ECF333A006E0028 /* PostCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5571B2D91ECF2E76006E0028 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5571B2DA1ECF2E76006E0028 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5571B2DE1ECF2E76006E0028 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5571B2DF1ECF2E76006E0028 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5571B2E21ECF2E76006E0028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5571B2E31ECF2E76006E0028 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5571B2E51ECF2E76006E0028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Instagram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.graphcool.nikolasburk.Instagram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5571B2E61ECF2E76006E0028 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Instagram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.graphcool.nikolasburk.Instagram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5571B2CD1ECF2E76006E0028 /* Build configuration list for PBXProject "Instagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5571B2E21ECF2E76006E0028 /* Debug */,
+				5571B2E31ECF2E76006E0028 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5571B2E41ECF2E76006E0028 /* Build configuration list for PBXNativeTarget "Instagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5571B2E51ECF2E76006E0028 /* Debug */,
+				5571B2E61ECF2E76006E0028 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5571B2CA1ECF2E76006E0028 /* Project object */;
+}
