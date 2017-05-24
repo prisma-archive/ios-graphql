@@ -16,7 +16,7 @@ For more information on how to get started refer to the [full ios-apollo-instagr
 
 ```sh
 git clone https://github.com/graphcool-examples/ios.git
-cd ios/quickstart-with-apollo
+cd ios-graphql/quickstart-with-apollo
 ```
 
 ### 2. Create GraphQL API with [`graphcool`](https://www.npmjs.com/package/graphcool)
