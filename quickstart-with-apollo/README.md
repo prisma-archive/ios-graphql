@@ -15,7 +15,7 @@ For more information on how to get started refer to the [full ios-apollo-instagr
 ### 1. Clone example repository
 
 ```sh
-git clone https://github.com/graphcool-examples/ios.git
+git clone https://github.com/graphcool-examples/ios-graphql.git
 cd ios-graphql/quickstart-with-apollo
 ```
 
