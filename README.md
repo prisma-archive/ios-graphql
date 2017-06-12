@@ -33,19 +33,9 @@ A big thank you to all contributors and supporters of this repository 💚
 <a href="https://github.com/nikolasburk/" target="_blank">
   <img src="https://github.com/nikolasburk.png?size=64" width="64" height="64" alt="nikolasburk">
 </a>
-<a href="https://github.com/fresh5447/" target="_blank">
-  <img src="https://github.com/fresh5447.png?size=64" width="64" height="64" alt="fresh5447">
-</a>
 <a href="https://github.com/marktani/" target="_blank">
   <img src="https://github.com/marktani.png?size=64" width="64" height="64" alt="marktani">
 </a>
-<a href="https://github.com/sebasibarguen/" target="_blank">
-  <img src="https://github.com/sebasibarguen.png?size=64" width="64" height="64" alt="sebasibarguen">
-</a>
-<a href="https://github.com/heymartinadams/" target="_blank">
-  <img src="https://github.com/heymartinadams.png?size=64" width="64" height="64" alt="heymartinadams">
-</a>
-
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 
