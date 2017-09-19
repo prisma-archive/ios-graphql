@@ -88,7 +88,7 @@ To use the Apollo iOS Client, you need to install `apollo-codegen`, a command li
 npm install -g apollo-codegen
 ```
 
-You can find more info the in the [Apollo docs](http://dev.apollodata.com/ios/installation.html).
+You can find out more in the [Apollo docs](http://dev.apollodata.com/ios/installation.html).
 
 ### 5. Install dependencies & run locally
 
