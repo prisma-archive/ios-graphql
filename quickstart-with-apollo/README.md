@@ -84,13 +84,13 @@ let apollo = ApolloClient(url: URL(string: "__SIMPLE_API_ENDPOINT__")!)
 
 ### 6. Install `apollo-codegen`
 
-To use the Apollo iOS Client, you need to install `apollo-codegen`, a command line tool that will generate Swift types from your GraphQL queries & mutations at build-time. 
+To use the Apollo iOS Client, you need to install [`apollo-codegen`](https://github.com/apollographql/apollo-codegen), a command line tool that will generate Swift types from your GraphQL queries & mutations at build-time. 
 
 ```sh
 npm install -g apollo-codegen
 ```
 
-You can find more info the in the [Apollo docs](http://dev.apollodata.com/ios/installation.html).
+You can find more info the installation process in the [Apollo docs](http://dev.apollodata.com/ios/installation.html).
 
 ### 7. Install dependencies & run locally
 
