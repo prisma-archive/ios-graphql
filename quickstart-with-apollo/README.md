@@ -37,7 +37,6 @@ This created the following file structure in the current directory:
 └── server
     ├── graphcool.yml
     ├── types.graphql
-    ├── .graphcoolrc
     └── src
         ├── hello.graphql
         └── hello.js
